@@ -569,12 +569,16 @@
 
                     <!-- Q5: 1:1 Devices -->
                     <div class="question">
-                        <span class="question-label required">Does your school provide 1:1 devices to students?</span>
-                        <p style="font-size: 0.9rem; color: #666; margin-bottom: 12px; font-style: italic;">1:1 means each student is assigned their own device (e.g., a Chromebook or iPad) rather than sharing with other students.</p>
+                        <span class="question-label required">Does your school use a 1:1 device model?</span>
+                        <p style="font-size: 0.9rem; color: #666; margin-bottom: 12px; font-style: italic;">1:1 means each student has their own dedicated device (e.g., a Chromebook or iPad) rather than sharing with other students. This includes both school-issued devices and bring-your-own-device (BYOD) policies.</p>
                         <div class="options-list">
                             <div class="option-item">
                                 <input type="radio" name="hasDevices" id="devices-yes" value="Yes" required>
-                                <label for="devices-yes">Yes</label>
+                                <label for="devices-yes">Yes — the school provides a device to each student</label>
+                            </div>
+                            <div class="option-item">
+                                <input type="radio" name="hasDevices" id="devices-byod" value="Yes — BYOD">
+                                <label for="devices-byod">Yes — students are required to bring their own device (BYOD)</label>
                             </div>
                             <div class="option-item">
                                 <input type="radio" name="hasDevices" id="devices-no" value="No — devices are shared">
@@ -1318,7 +1322,7 @@
         // 1:1 Devices question handler
         document.querySelectorAll('input[name="hasDevices"]').forEach(radio => {
             radio.addEventListener('change', (e) => {
-                if (e.target.value === 'Yes') {
+                if (e.target.value === 'Yes' || e.target.value === 'Yes — BYOD') {
                     deviceTypeQuestion.classList.add('visible');
                     devicesHomeQuestion.classList.add('visible');
                     deviceStorageQuestion.classList.remove('visible');
