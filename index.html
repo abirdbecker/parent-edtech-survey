@@ -577,7 +577,7 @@
                                 <label for="devices-yes">Yes — the school provides a device to each student</label>
                             </div>
                             <div class="option-item">
-                                <input type="radio" name="hasDevices" id="devices-byod" value="Yes — BYOD">
+                                <input type="radio" name="hasDevices" id="devices-byod" value="Yes — students are required to bring their own device (BYOD)">
                                 <label for="devices-byod">Yes — students are required to bring their own device (BYOD)</label>
                             </div>
                             <div class="option-item">
@@ -1322,7 +1322,7 @@
         // 1:1 Devices question handler
         document.querySelectorAll('input[name="hasDevices"]').forEach(radio => {
             radio.addEventListener('change', (e) => {
-                if (e.target.value === 'Yes — the school provides a device to each student' || e.target.value === 'Yes — BYOD') {
+                if (e.target.value === 'Yes — the school provides a device to each student' || e.target.value === 'Yes — students are required to bring their own device (BYOD)') {
                     deviceTypeQuestion.classList.add('visible');
                     devicesHomeQuestion.classList.add('visible');
                     deviceStorageQuestion.classList.remove('visible');
