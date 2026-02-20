@@ -573,7 +573,7 @@
                         <p style="font-size: 0.9rem; color: #666; margin-bottom: 12px; font-style: italic;">1:1 means each student has their own dedicated device (e.g., a Chromebook or iPad) rather than sharing with other students. This includes both school-issued devices and bring-your-own-device (BYOD) policies.</p>
                         <div class="options-list">
                             <div class="option-item">
-                                <input type="radio" name="hasDevices" id="devices-yes" value="Yes" required>
+                                <input type="radio" name="hasDevices" id="devices-yes" value="Yes — the school provides a device to each student" required>
                                 <label for="devices-yes">Yes — the school provides a device to each student</label>
                             </div>
                             <div class="option-item">
@@ -1322,7 +1322,7 @@
         // 1:1 Devices question handler
         document.querySelectorAll('input[name="hasDevices"]').forEach(radio => {
             radio.addEventListener('change', (e) => {
-                if (e.target.value === 'Yes' || e.target.value === 'Yes — BYOD') {
+                if (e.target.value === 'Yes — the school provides a device to each student' || e.target.value === 'Yes — BYOD') {
                     deviceTypeQuestion.classList.add('visible');
                     devicesHomeQuestion.classList.add('visible');
                     deviceStorageQuestion.classList.remove('visible');
